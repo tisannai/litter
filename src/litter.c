@@ -93,6 +93,9 @@ st_none st_time_meas_record_start( st_time_meas_t tm, st_str_t label )
 st_none st_time_meas_record_end( st_time_meas_t tm, st_str_t label )
 {
     st_time_period_t period;
+
+    (void)label;
+
     period = tm->cur;
     period->state = ST_TIME_ENDED;
     st_time_interval_end( &period->interval );
